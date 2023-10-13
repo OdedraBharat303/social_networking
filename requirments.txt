@@ -1,0 +1,4 @@
+python==3.8.10
+Django==4.2.6
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.0

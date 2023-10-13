@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_DB_ENGINE=django.db.backends.sqlite3
+      - DJANGO_DB_NAME=/app/db.sqlite3  # Path to the SQLite database file
+    depends_on:
+      - db
+  db:
+    image: alpine
+    command: ["echo", "SQLite database container"]
